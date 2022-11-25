@@ -26,7 +26,9 @@ const fetchDoorEmail = async (doorId) => {
   })
   return email
 }
-
+app.get('/', (req, res) => {
+  res.send(OTPGenerator())
+})
 app.get('/api/otp', (req, res) => {
   res.json(OTPGenerator())
 })
