@@ -2,7 +2,7 @@
   "name": "test_backend_1",
   "version": "1.0.0",
   "description": "",
-  "main": "/api/index.js",
+  "main": "index.js",
   "type": "commonjs",
   "scripts": {
     "start": "node api",
