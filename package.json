@@ -2,10 +2,10 @@
   "name": "test_backend_1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/api/index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js",
+    "start": "node api",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "harsh",
