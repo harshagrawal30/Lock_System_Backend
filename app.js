@@ -22,7 +22,7 @@ const fetchDoorEmail = async (doorId) => {
   console.log(doors);
   let email;
   doors.map(async (door) => {
-    if (door.doorId.substr(0,15) == doorId.substr(0,15)) { email = door.email }
+    if (door.doorId.substr(0, 15) == doorId.substr(0, 15)) { email = door.email }
   })
   return email
 }
@@ -34,17 +34,17 @@ app.get('/api/otp', (req, res) => {
 })
 app.post('/api/otp', async (req, res) => {
   const email = await fetchDoorEmail(req.body.doorId);
-  try{
-    
+  try {
+
     SendMail({ email: email, otp: req.body.otp })
-     setTimeout(() => {
-     res.send("success")
-     }, 2000);
-    }
-    catch{
-      console.log('err')
+    setTimeout(() => {
+      res.send("success")
+    }, 2000);
+  }
+  catch {
+    console.log('err')
     res.send("error");
-    }
+  }
 })
 const PORT = 3001
 app.listen(PORT, () => {
