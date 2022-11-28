@@ -1,6 +1,6 @@
 # Lock System Backend
 
-## Steps for backend and DataBase 
+## Steps for backend and DataBase Setup
 
 - Fork this Repository and pull it to your device 
  - Run **npm install** from terminal in project directory
