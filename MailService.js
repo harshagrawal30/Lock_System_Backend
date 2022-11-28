@@ -5,13 +5,13 @@ const SendMail = (body) => {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'harsh.curasso@gmail.com',
+      user: process.env.MY_EMAIL,
       pass: process.env.MY_PASSWORD
     }
   });
 
   var mailOptions = {
-    from: 'harsh.curasso@gmail.com',
+    from: process.env.MY_EMAIL,
     to: body.email,
     subject: 'OTP for Lock System',
     text: body.otp

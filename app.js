@@ -36,7 +36,9 @@ app.post('/api/otp', async (req, res) => {
   const email = await fetchDoorEmail(req.body.doorId);
   try {
 
-    SendMail({ email: email, otp: req.body.otp })
+   const result = SendMail({ email: email, otp: req.body.otp })
+   while(result === undefined){}
+   console.log(result,'result')
     setTimeout(() => {
       res.send("success")
     }, 2000);
