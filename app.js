@@ -16,6 +16,7 @@ const OTPGenerator = () => {
   console.log(otp, 'otp')
   return otp;
 }
+
 const fetchDoorEmail = async (doorId) => {
   results = await fetchDoorFunc();
   doors = results;
@@ -26,20 +27,22 @@ const fetchDoorEmail = async (doorId) => {
   })
   return email
 }
+
+
 app.get('/', (req, res) => {
   res.send(OTPGenerator())
 })
+
+
 app.get('/api/otp', (req, res) => {
   res.json(OTPGenerator())
 })
+
+
 app.post('/api/otp', async (req, res) => {
   const email = await fetchDoorEmail(req.body.doorId);
   try {
-
-  //  const result = 
-   SendMail({ email: email, otp: req.body.otp })
-  //  while(result === undefined){}
-  //  console.log(result,'result')
+    SendMail({ email: email, otp: req.body.otp })
     setTimeout(() => {
       res.send("success")
     }, 2000);
@@ -49,6 +52,8 @@ app.post('/api/otp', async (req, res) => {
     res.send("error");
   }
 })
+
+
 const PORT = 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
